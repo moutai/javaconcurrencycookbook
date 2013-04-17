@@ -22,11 +22,12 @@ public class EventStorage {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			((LinkedList<Date>) storage).offer(new Date());
-			System.out.printf("Set: %d", storage.size());
-			notifyAll();
 		}
+		((LinkedList<Date>) storage).offer(new Date());
+		System.out.printf("Set: %d", storage.size());
+		notifyAll();
 	}
+	
 
 	public synchronized void get() {
 		while (storage.size() == 0) {

@@ -10,7 +10,8 @@ public class Main {
 		Consumer consumer = new Consumer(storage);
 		Thread thread2 = new Thread (consumer);
 		
-		thread2.start();
 		thread1.start();
+		thread2.start();
+		
 	}
 }
